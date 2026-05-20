@@ -1,50 +1,27 @@
 # StockGro-Quantitative-Forecasting
-# Multi-Factor Financial Forecasting & Risk-Aware Portfolio Optimization
+# Quantitative Forecasting & Multi-Factor Portfolio Optimization
 
-An end-to-end quantitative trading and pipeline framework built to forecast equity price action and optimize asset allocation parameters using a virtual capital footprint of ₹10,00,000 deployed on StockGro.
+This repository contains the complete end-to-end framework for asset evaluation, forecasting, and deployment validation on StockGro with a capital footprint of ₹10,00,000.
 
-## Project Architecture
-The underlying pipeline runs entirely on live market data fetched dynamically via the `yfinance` API. The technical workflow is structured into three main engineering blocks:
-1. **Signal Decomposition:** Isolating underlying trends and structural noise using Robust STL decomposition.
-2. **Forecasting Funnel:** Generating out-of-sample forward projections wrapped in 95% confidence intervals utilizing a blended multi-model consensus (ARIMA, Prophet, LSTM).
-3. **Portfolio Construction:** Allocating capital dynamically via custom inverse-variance weights and forecast-guided momentum scoring, validated using a 5,000-pass Monte Carlo Efficient Frontier simulation.
+##  Technical Architecture Overview
+The underlying pipeline executes data harvesting dynamically via `yfinance`, performs structural signal separation using Robust STL decomposition, and optimizes capital risk matching via an automated inverse-variance weighting schema.
 
----
+##  Submission Deliverables Mapping
+The final analysis is structurally organized across the 8 core evaluation pillars as presented in the comprehensive project report:
 
-## 🗺️ Execution Framework Matrix
-The core asset scaling strategy follows a structured 2x2 cross-reference matrix to manage portfolio risk parameters against varying market regimes:
+* **Task 1: Stock Selection Rationale** — Strategic baseline asset universe targeting high-liquidity choices.
+* **Task 2: Data Preprocessing Steps** — Stationarity transformations, outlier filtering, and feature normalization.
+* **Task 3: Production Forecast Funnel** — Out-of-sample forward targets wrapped in 95% confidence intervals.
+* **Task 4: Volatility & Trend Analysis Findings** — Structural trend stability tracking and EWMA risk matrices.
+* **Task 5: Portfolio Composition & Sizing** — Multi-strategy execution rules scaling return targets against risk limits.
+* **Task 6: Model Evaluation Metrics** — Cross-validation analysis and historical backtest performance parsing.
+* **Task 7: StockGro Execution Summary** — Live position deployments, order fills, and asset deployment summaries.
+* **Task 8: Predicted vs. Actual Outcomes** — The core performance validation matching model projections to actual spot rates.
+* **Task 9: Operational Reflections** — Algorithmic adjustments, constraint modifications, and future execution enhancements.
 
-                        TASK 4 METRIC CROSS-REFERENCE
-                                      │
-                 High Strength                  Low Strength
-        ┌──────────────────────────────┬──────────────────────────────┐
-        │ STRATEGY A: FORECAST GUIDED  │ HIGH NOISE REGIME            │
-  High  │ - High conviction direction  │ - Avoid or heavily reduce    │
-  Trend │ - Allocate larger weights    │   capital allocation         │
-  Score │ - e.g., Britannia (Upward)   │ - Unpredictable price action │
-        ├──────────────────────────────┼──────────────────────────────┤
-        │ STRATEGY B: VOLATILITY AWARE │ DEEP CONSOLIDATION           │
-  Low   │ - Feed directly into inverse │ - Sideways trend pattern     │
-  Trend │   variance matrix (1/Var)    │ - Wait for explicit volume   │
-  Score │ - Protect capital in Kotak   │   breakout confirmation      │
-        └──────────────────────────────┴──────────────────────────────┘
-
----
-
-## 📁 Repository Deliverables Directory
-The structure of this project is organized strictly according to evaluation guidelines:
-
-* 📂 **`notebooks/`**
-  * `capstoneProject.ipynb`: The complete executable pipeline containing live data-harvesting, processing transformations, model implementations, and interactive Plotly optimization visualizations.
-* 📂 **`reports/`**
-  * `Projectreport_timeseriesanalysis.pdf`: The comprehensive 10-page analytical dossier diving into methodology justifications, historical performance backtests, StockGro fill executions, and final model calibration critiques.
-
----
-
-## ⚙️ Local Environment & Installation
-To reproduce the modeling environment and run the pipeline locally, execute the following steps in your local terminal:
-
-1. Clone the repository:
+## How to Execute the Pipeline Local Environment Setup
+1. Clone this repository to your local machine.
+2. Install the system dependencies directly using the frozen manifest:
    ```bash
-   git clone [https://github.com/Mahi18-art/YOUR_REPOSITORY_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git)
-   cd YOUR_REPOSITORY_NAME
+   pip install -r requirements.txt
+3. Launch your Jupyter interface and execute the tracking workflow sequentially
